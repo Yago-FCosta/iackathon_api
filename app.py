@@ -6,6 +6,8 @@ app = Flask(__name__)
 # Crie um DataFrame de exemplo
 dados = pd.read_csv('df_score_bairros.csv')
 
+dados= dados.sort_values(by = 'BAIRRO')
+
 # Endpoint para retornar a idade com base no nome
 @app.route('/', methods=['GET'])
 def mostrar_tabela():
